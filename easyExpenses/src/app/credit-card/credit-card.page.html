@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Tarjeta
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+    <ion-fab vertical="top" horizontal="end" edge slot="fixed" >
+        <ion-fab-button>
+          <ion-icon name="add"></ion-icon>
+        </ion-fab-button>
+      </ion-fab>
+  <ion-card>
+    <ion-grid>
+      <ion-row class="row-header row-border">
+        <ion-col class=" col-border text-center">Fecha</ion-col>
+        <ion-col class=" col-border text-center">Concepto</ion-col>
+        <ion-col class=" col-border text-center">Cuota</ion-col>
+        <ion-col class=" col-border text-center">Importe</ion-col>
+      </ion-row>
+      <ion-row class="row-child row-border mt-1 p-0 ">
+        <ion-col class=" col-border text-center">02/08/18</ion-col>
+        <ion-col class=" col-border text-center">Despegar (pasajes)</ion-col>
+        <ion-col class=" col-border text-center">C.07/09</ion-col>
+        <ion-col class=" col-border text-center">$4001.77</ion-col>
+      </ion-row>
+      <ion-row class="row-child row-border mt-1 p-0 " *ngFor="let item of items">
+        <ion-col class=" col-border text-center">29/08/18</ion-col>
+        <ion-col class=" col-border text-center">Despegar (hotel aloft)</ion-col>
+        <ion-col class=" col-border text-center">C.06/09</ion-col>
+        <ion-col class=" col-border text-center">$617.88</ion-col>
+      </ion-row>
+    </ion-grid>
+  </ion-card>
+</ion-content>
