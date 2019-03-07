@@ -17,7 +17,7 @@ BEGIN
 		saldo             decimal(15,2) not null,
 		observaciones     varchar(200)  null
 	);	
-	insert into Resumen values("032019" , "Sueldo", 36987.00,36987.00, "");
+	insert into Resumen values("032019" , "Sueldo", 36987.00,"",36987.00, "");
 
 	
 	create table ResumenTC (
