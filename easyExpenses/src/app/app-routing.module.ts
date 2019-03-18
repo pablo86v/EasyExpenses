@@ -12,7 +12,7 @@ const routes: Routes = [
     loadChildren: './home/home.module#HomePageModule'
   },
   { 
-    path: 'credit-card', 
+    path: 'credit-card/:idTarjeta', 
     loadChildren: './credit-card/credit-card.module#CreditCardPageModule' 
   }
 

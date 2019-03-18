@@ -23,17 +23,11 @@
         <ion-col class=" col-border text-center">Cuota</ion-col>
         <ion-col class=" col-border text-center">Importe</ion-col>
       </ion-row>
-      <ion-row class="row-child row-border mt-1 p-0 ">
-        <ion-col class=" col-border text-center">02/08/18</ion-col>
-        <ion-col class=" col-border text-center">Despegar (pasajes)</ion-col>
-        <ion-col class=" col-border text-center">C.07/09</ion-col>
-        <ion-col class=" col-border text-center">$4001.77</ion-col>
-      </ion-row>
-      <ion-row class="row-child row-border mt-1 p-0 " *ngFor="let item of items">
-        <ion-col class=" col-border text-center">29/08/18</ion-col>
-        <ion-col class=" col-border text-center">Despegar (hotel aloft)</ion-col>
-        <ion-col class=" col-border text-center">C.06/09</ion-col>
-        <ion-col class=" col-border text-center">$617.88</ion-col>
+      <ion-row class="row-child row-border mt-1 p-0 " *ngFor="let consumo of aConsumos">
+        <ion-col class=" col-border text-center">{{consumo.fechaConsumo}}</ion-col>
+        <ion-col class=" col-border text-center">{{consumo.conceptoConsumo}}</ion-col>
+        <ion-col class=" col-border text-center">C.{{consumo.cuotaActual|number:'2.0-0'}}/{{consumo.cuotas|number:'2.0-0'}}</ion-col>
+        <ion-col class=" col-border text-center">{{consumo.montoCuota}}</ion-col>
       </ion-row>
     </ion-grid>
   </ion-card>

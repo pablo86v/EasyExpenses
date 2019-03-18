@@ -28,7 +28,6 @@ export class AppComponent {
 
   initializeApp() {
     this.platform.ready().then(() => {
-      console.log("inicio")
       this.addPages();
       this.statusBar.styleDefault();
       this.splashScreen.hide();
@@ -40,7 +39,7 @@ export class AppComponent {
     this.commonService.traer("/tarjeta-bancaria/").subscribe(
       data => {
         data.forEach(element => {
-          this.appPages.push({title : element.marca + " " + element.entidad , url: '/credit-card',icon : 'card'})
+          this.appPages.push({title : element.marca + " " + element.entidad , url: '/credit-card/' + element.idTarjeta,icon : 'card'})
         });
       }
      );

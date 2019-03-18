@@ -7,6 +7,7 @@ BEGIN
 	drop table if exists Resumen;
 	drop table if exists ResumenTC;
 	drop table if exists TarjetaBancaria;
+	drop table if exists ImpuestosTarjeta;
 
 
 	create table Resumen (
@@ -21,7 +22,8 @@ BEGIN
 
 	
 	create table ResumenTC (
-		mmaaaa            varchar(6) not null primary key,
+		idConsumo         int unsigned auto_increment primary key,
+		mmaaaa            varchar(6) not null,
 		idTarjeta         int not null,
 		fechaConsumo      varchar(10) null,
 		conceptoConsumo   varchar (80) not null,
@@ -30,7 +32,7 @@ BEGIN
 		montoCuota        decimal(15,2) not null,
 		adicional         boolean not null
 	);
-	insert into ResumenTC values("032019",1,"29/08/2018","DESPEGAR HOTEL HULKU MX",6,6, 1403.96,false);
+	insert into ResumenTC values(1,"032019",1,"29/08/2018","DESPEGAR HOTEL HULKU MX",6,6, 1403.96,false);
 	
 	
 	create table TarjetaBancaria (

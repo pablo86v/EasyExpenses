@@ -7,7 +7,7 @@ import { environment } from '../../environments/environment';
 @Injectable({
   providedIn: 'root'
 })
-export class CommonServiceService {
+export class ResumenTcService {
 
   private headers: HttpHeaders;
   private apiURL= environment.apiURL ;
@@ -17,11 +17,11 @@ export class CommonServiceService {
     this.headers.append('Content-Type', 'application/json');
    }
 
-   traer(table) : Observable<Array<any>> {
-    return this.http.get<Array<any>>(this.apiURL + table + 'traer')
+   traerResumen(idTarjeta : String) : Observable<Array<any>> {
+    return this.http.get<Array<any>>(this.apiURL + '/resumen-tc/traer-uno/'+ idTarjeta)
     .pipe(
-      tap(data => this.log(table+"::traer()")),
-      catchError(this.handleError(table+"::traer()", []))
+      tap(data => this.log("traerResumen("+idTarjeta+")")),
+      catchError(this.handleError("traerResumen("+idTarjeta+")", []))
     );
    }
 
